@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">  
+<!-- namespace必须指向Dao接口 -->  
+<mapper namespace="com.jwh.demo.springBoot.dao.IUserDao">
+    <resultMap id="userMap" type="com.jwh.demo.core.bean.UserBean">
+		<id property="id" column="id" />
+		<result property="telephone" column="telephone" />
+		<result property="userName" column="user_name" />
+		<result property="userPass" column="user_pass" />
+		<result property="email" column="email" />
+		<result property="position" column="position"/>
+		<result property="selfIntroduce" column="self_introduce"/>
+		<result property="speciality" column="speciality"/>
+		<result property="addr" column="addr"/>
+		<result property="headerName" column="header_name"/>
+		<result property="isSystem" column="is_system"/>
+		<result property="departId" column="depart_id"/>
+		<result property="compId" column="comp_id"/>
+		<result property="createTime" column="create_time" />
+	</resultMap>
+    <!-- 根据ID查询数据 -->  
+    <select id="queryList" parameterType="com.jwh.demo.core.bean.UserBean" resultMap="userMap">
+    	select 
+    		id,
+    		telephone,
+    		user_name,
+    		user_pass,
+    		email,
+    		position,
+    		self_introduce,
+    		speciality,
+    		addr,
+    		header_name,
+    		is_system,
+    		depart_id,
+    		comp_id,
+    		create_time
+    	from t_user where id = #{id}
+    </select>  
+</mapper>  

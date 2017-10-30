@@ -1,0 +1,2 @@
+contextConsumerFilter=com.jwh.demo.core.dubbo.filter.ContextConsumerFilter
+contextProviderFilter=com.jwh.demo.core.dubbo.filter.ContextProviderFilter
